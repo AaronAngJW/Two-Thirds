@@ -10,6 +10,7 @@ from psychopy import visual, event, core
 from numpy import random, pi, sin
 import random
 
+<<<<<<< HEAD
 #Speed of dots
 speed = 0.01
 #Generate a random movement direction
@@ -20,14 +21,31 @@ randturn = random.randint(10,120)
 pos1 = (-240,0)
 #Number of dots
 NrOfDots = 50
+=======
+speed = 0.01
+deg = random.uniform(-180.00, 180.00)
+#xchange = random.uniform(-1.00,1.00)
+#ychange = random.uniform(-1.00,1.00)
+randturn = random.randint(10,120)
+k = []
+pos1 = (-240,0)
+>>>>>>> origin/master
 
 speed23 = []
 speed23SCALED = []
 GauSpeed = []
 SinSpeed = []
+<<<<<<< HEAD
 k = []
 num = 0
 triggercounter = 0
+=======
+
+turn = False
+num = 0
+NrOfDots = 50
+turn_trigger = 40
+>>>>>>> origin/master
 
 win =visual.Window(fullscr=True, screen = 0, allowGUI=False,
     bitsMode=None, units='pix', winType='pyglet')
@@ -97,6 +115,7 @@ for x in range(len(speed23)):
     scale = speed23[num]/100
     speed23SCALED.append(scale)
     num += 1'''
+<<<<<<< HEAD
 
 
 while True:
@@ -109,6 +128,20 @@ while True:
         #Direction of dot movements = random generate degree
         dotPatch1.dir = deg
         #Reset turn counter
+=======
+    
+num = 0
+trigger = randturn
+triggercounter = 0
+
+
+while True:
+
+    if triggercounter == randturn:
+        deg = random.uniform(0.00, 360.00)
+        randturn = random.randint(10,120)
+        dotPatch1.dir = deg
+>>>>>>> origin/master
         triggercounter = 0
         
     dotPatch1.speed = speed
@@ -117,7 +150,10 @@ while True:
     win.flip()
     num += 1 
     triggercounter += 1     
+<<<<<<< HEAD
     print dotPatch1.xys
+=======
+>>>>>>> origin/master
     
     if event.getKeys(keyList=['escape']):
         win.close()
