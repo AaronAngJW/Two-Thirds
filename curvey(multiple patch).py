@@ -30,6 +30,11 @@ num = 0
 triggercounter1 = 0
 triggercounter2 = 0
 
+randdir1 = random.uniform(0.00, 360.00)
+randdir2 = random.uniform(0.00, 360.00)
+randdir3 = random.uniform(0.00, 360.00)
+randdir4 = random.uniform(0.00, 360.00)
+
 
 win =visual.Window(fullscr=True, screen = 0, allowGUI=False,
     bitsMode=None, units='pix', winType='pyglet')
@@ -38,28 +43,28 @@ dotPatch1 = visual.DotStim(win, units='pix',
     color=(1.0,1.0,1.0), nDots=NrOfDots, dotSize = 5,
     fieldShape='circle', fieldPos=pos1,fieldSize=(350,350),
     dotLife=180, #number of frames for each dot to be drawn
-    speed=0, dir=180,
+    speed=0, dir=randdir1,
     coherence=1, signalDots='same', noiseDots='direction')
 
 dotPatch2 = visual.DotStim(win, units='pix', 
     color=(1.0,1.0,1.0), nDots=NrOfDots, dotSize = 5,
     fieldShape='circle', fieldPos=pos1,fieldSize=(350,350),
     dotLife=180, #number of frames for each dot to be drawn
-    speed=0, dir=180,
+    speed=0, dir=randdir2,
     coherence=1, signalDots='same', noiseDots='direction')
 
 dotPatch3 = visual.DotStim(win, units='pix', 
     color=(1.0,1.0,1.0), nDots=NrOfDots, dotSize = 5,
     fieldShape='circle', fieldPos=pos1,fieldSize=(350,350),
     dotLife=180, #number of frames for each dot to be drawn
-    speed=0, dir=180,
+    speed=0, dir=randdir3,
     coherence=1, signalDots='same', noiseDots='direction')
 
 dotPatch4 = visual.DotStim(win, units='pix', 
     color=(1.0,1.0,1.0), nDots=NrOfDots, dotSize = 5,
     fieldShape='circle', fieldPos=pos1,fieldSize=(350,350),
     dotLife=180, #number of frames for each dot to be drawn
-    speed=0, dir=180,
+    speed=0, dir=randdir4,
     coherence=1, signalDots='same', noiseDots='direction')
    
 
@@ -73,7 +78,7 @@ while True:
         #Generate random left turn or right turn
         turn_dir = random.randint(1,2)
         #Generate new time to next turn
-        randturn = random.randint(10,120)
+        randturn = random.randint(10,90)
         #As long as turn counter is lesser than the randomly generate degree of turn
         if turn_counter1 <= deg:  
             #Each degree of the randomly generate degree of turn = 1 frame
