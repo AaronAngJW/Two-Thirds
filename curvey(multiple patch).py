@@ -19,7 +19,7 @@ randturn = random.randint(10,120)
 #Position of centre of dot patch
 pos1 = (-240,0)
 #Number of dots
-NrOfDots = 10
+NrOfDots = 5
 
 speed23 = []
 speed23SCALED = []
@@ -66,7 +66,34 @@ dotPatch4 = visual.DotStim(win, units='pix',
     dotLife=180, #number of frames for each dot to be drawn
     speed=0, dir=randdir4,
     coherence=1, signalDots='same', noiseDots='direction')
-   
+
+dotPatch5 = visual.DotStim(win, units='pix', 
+    color=(1.0,1.0,1.0), nDots=NrOfDots, dotSize = 5,
+    fieldShape='circle', fieldPos=pos1,fieldSize=(350,350),
+    dotLife=180, #number of frames for each dot to be drawn
+    speed=0, dir=randdir1*0.75,
+    coherence=1, signalDots='same', noiseDots='direction')
+
+dotPatch6 = visual.DotStim(win, units='pix', 
+    color=(1.0,1.0,1.0), nDots=NrOfDots, dotSize = 5,
+    fieldShape='circle', fieldPos=pos1,fieldSize=(350,350),
+    dotLife=180, #number of frames for each dot to be drawn
+    speed=0, dir=randdir2*0.75,
+    coherence=1, signalDots='same', noiseDots='direction')
+
+dotPatch7 = visual.DotStim(win, units='pix', 
+    color=(1.0,1.0,1.0), nDots=NrOfDots, dotSize = 5,
+    fieldShape='circle', fieldPos=pos1,fieldSize=(350,350),
+    dotLife=180, #number of frames for each dot to be drawn
+    speed=0, dir=randdir3*0.75,
+    coherence=1, signalDots='same', noiseDots='direction')
+
+dotPatch8 = visual.DotStim(win, units='pix', 
+    color=(1.0,1.0,1.0), nDots=NrOfDots, dotSize = 5,
+    fieldShape='circle', fieldPos=pos1,fieldSize=(350,350),
+    dotLife=180, #number of frames for each dot to be drawn
+    speed=0, dir=randdir4*0.75,
+    coherence=1, signalDots='same', noiseDots='direction')   
 
 while True:
     #If the turn trigger counter matches the randomly generate turning interval
@@ -74,7 +101,7 @@ while True:
         #Counter to establish duration of turn
         turn_counter1 = 0
         #Generate a new direction of turn for next turn.
-        deg = random.randint(0, 180)
+        deg = random.randint(0, 360)
         #Generate random left turn or right turn
         turn_dir = random.randint(1,2)
         #Generate new time to next turn
@@ -90,6 +117,10 @@ while True:
                     dotPatch2.dir -= 1
                     dotPatch3.dir += 0.5
                     dotPatch4.dir -= 0.5
+                    dotPatch5.dir += 0.25
+                    dotPatch6.dir -= 0.25
+                    dotPatch7.dir += 0.75
+                    dotPatch8.dir -= 0.75
                     turn_counter1 += 1
                 #If left turn
                 elif turn_dir == 2:
@@ -97,12 +128,20 @@ while True:
                     dotPatch1.dir -= 1
                     dotPatch2.dir += 1
                     dotPatch3.dir -= 0.5
-                    dotPatch4.dir += 0.5                    
+                    dotPatch4.dir += 0.5 
+                    dotPatch5.dir += 0.25
+                    dotPatch6.dir -= 0.25
+                    dotPatch7.dir += 0.75
+                    dotPatch8.dir -= 0.75
                     turn_counter1 += 1
                 dotPatch1.draw()
                 dotPatch2.draw()
                 dotPatch3.draw()
                 dotPatch4.draw()
+                dotPatch5.draw()
+                dotPatch6.draw()
+                dotPatch7.draw()
+                dotPatch8.draw()
                 
                 win.flip()     
         #Reset turn trigger counter        
@@ -140,10 +179,18 @@ while True:
     dotPatch2.speed = speed
     dotPatch3.speed = speed
     dotPatch4.speed = speed
+    dotPatch5.speed = speed
+    dotPatch6.speed = speed
+    dotPatch7.speed = speed
+    dotPatch8.speed = speed
     dotPatch1.draw()
     dotPatch2.draw()
     dotPatch3.draw()
     dotPatch4.draw()
+    dotPatch5.draw()
+    dotPatch6.draw()
+    dotPatch7.draw()
+    dotPatch8.draw()
     win.flip()
     num += 1
     triggercounter1 += 1
