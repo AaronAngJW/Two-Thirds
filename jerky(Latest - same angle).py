@@ -11,7 +11,7 @@ from numpy import random, pi, sin
 import random
 
 #Speed of dots
-speed = 0.01
+speed = 0.011
 #Generate a random movement direction
 deg = random.uniform(-180.00, 180.00)
 #Generate a random time where a turn is triggered. (60=1s on 60Hz monitor)
@@ -49,7 +49,7 @@ while True:
     deg = random.uniform(-180.,180.)
     if turncounter == turndeg:
         dotPatch1._dotsDir += deg
-        turndeg = random.randint(30,90)
+        turndeg = random.randint(5,30)
         turncounter = 0
     dotPatch1.draw()
     win.flip()
@@ -58,7 +58,4 @@ while True:
     if event.getKeys(keyList=['escape']):
         win.close()
         core.quit()
-    
-
-
-    
+        

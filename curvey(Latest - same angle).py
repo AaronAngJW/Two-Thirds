@@ -11,7 +11,7 @@ from numpy import random, pi, sin
 import random
 
 #Speed of dots
-speed = 0.01
+speed = 0.011
 #Generate a random movement direction
 deg = random.uniform(-180.00, 180.00)
 #Generate a random time where a turn is triggered. (60=1s on 60Hz monitor)
